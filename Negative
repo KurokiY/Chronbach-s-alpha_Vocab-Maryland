@@ -1,3 +1,621 @@
 #######################
 #### Nagative text ####
 #######################
+
+> alpha(datag)
+Some items ( Neg05 Neg06 Neg13 Neg16 Neg17 ) were negatively correlated with the first principal component and 
+probably should be reversed.  
+To do this, run the function again with the 'check.keys=TRUE' option
+Reliability analysis   
+Call: alpha(x = datag)
+
+  raw_alpha std.alpha G6(smc) average_r S/N  ase mean   sd median_r
+      0.18      0.23    0.58     0.017 0.3 0.18 0.59 0.11    0.014
+
+    95% confidence boundaries 
+         lower alpha upper
+Feldt    -0.23  0.18  0.50
+Duhachek -0.17  0.18  0.52
+
+ Reliability if an item is dropped:
+      raw_alpha std.alpha G6(smc) average_r   S/N alpha se var.r    med.r
+Neg02     0.079     0.101    0.49    0.0070 0.112     0.20 0.034 -0.00575
+Neg03     0.127     0.141    0.50    0.0101 0.164     0.19 0.033  0.01358
+Neg04     0.117     0.129    0.47    0.0092 0.148     0.19 0.032  0.01358
+Neg05     0.244     0.277    0.58    0.0234 0.383     0.16 0.039  0.02427
+Neg06     0.287     0.315    0.60    0.0279 0.459     0.15 0.038  0.03565
+Neg07     0.098     0.158    0.53    0.0116 0.188     0.19 0.036 -0.00399
+Neg08     0.135     0.206    0.57    0.0159 0.259     0.19 0.040  0.01872
+Neg09     0.121     0.158    0.54    0.0116 0.188     0.19 0.037  0.00772
+Neg10     0.172     0.213    0.56    0.0166 0.271     0.18 0.037  0.00355
+Neg11     0.123     0.190    0.56    0.0145 0.235     0.19 0.040  0.02122
+Neg12     0.182     0.240    0.56    0.0194 0.316     0.18 0.040  0.02122
+Neg13     0.228     0.301    0.62    0.0262 0.430     0.17 0.039  0.03117
+Neg14     0.101     0.156    0.50    0.0114 0.185     0.19 0.039 -0.00029
+Neg15     0.167     0.217    0.56    0.0171 0.278     0.18 0.038  0.00772
+Neg16     0.351     0.413    0.65    0.0421 0.703     0.14 0.031  0.03704
+Neg17     0.254     0.307    0.62    0.0269 0.442     0.16 0.038  0.01845
+Neg18    -0.052     0.064    0.45    0.0043 0.069     0.23 0.038 -0.00763
+
+ Item statistics 
+       n  raw.r   std.r   r.cor r.drop mean   sd
+Neg02 43  0.475  0.5413  0.5900  0.329 0.88 0.32
+Neg03 43  0.349  0.4602  0.5116  0.224 0.93 0.26
+Neg04 43  0.372  0.4852  0.5669  0.201 0.86 0.35
+Neg05 43  0.123  0.1187 -0.0057 -0.124 0.33 0.47
+Neg06 43  0.041  0.0025 -0.1460 -0.213 0.58 0.50
+Neg07 43  0.419  0.4226  0.4158  0.240 0.84 0.37
+Neg08 43  0.366  0.3112  0.1907  0.120 0.63 0.49
+Neg09 43  0.369  0.4216  0.3681  0.174 0.81 0.39
+Neg10 43  0.243  0.2929  0.2292  0.040 0.81 0.39
+Neg11 43  0.390  0.3485  0.2557  0.142 0.60 0.49
+Neg12 43  0.261  0.2225  0.1395  0.020 0.30 0.46
+Neg13 43  0.020  0.0474 -0.1340 -0.147 0.12 0.32
+Neg14 43  0.426  0.4275  0.4268  0.190 0.35 0.48
+Neg15 43  0.266  0.2818  0.1996  0.054 0.79 0.41
+Neg16 43 -0.296 -0.3630 -0.5858 -0.471 0.21 0.41
+Neg17 43  0.114  0.0287 -0.1493 -0.140 0.63 0.49
+Neg18 43  0.652  0.6111  0.6816  0.460 0.42 0.50
+
+Non missing response frequency for each item
+         0    1 miss
+Neg02 0.12 0.88    0
+Neg03 0.07 0.93    0
+Neg04 0.14 0.86    0
+Neg05 0.67 0.33    0
+Neg06 0.42 0.58    0
+Neg07 0.16 0.84    0
+Neg08 0.37 0.63    0
+Neg09 0.19 0.81    0
+Neg10 0.19 0.81    0
+Neg11 0.40 0.60    0
+Neg12 0.70 0.30    0
+Neg13 0.88 0.12    0
+Neg14 0.65 0.35    0
+Neg15 0.21 0.79    0
+Neg16 0.79 0.21    0
+Neg17 0.37 0.63    0
+Neg18 0.58 0.42    0
+Warning message:
+In alpha(datag) :
+  Some items were negatively correlated with the first principal component and probably 
+should be reversed.  
+To do this, run the function again with the 'check.keys=TRUE' option
+
+#############################################
+Removed: Neg16
+#############################################
+> datag1 <- datag %>% select(-Neg16)
+> alpha(datag1)
+Some items ( Neg05 Neg06 Neg13 Neg17 ) were negatively correlated with the first principal component and 
+probably should be reversed.  
+To do this, run the function again with the 'check.keys=TRUE' option
+Reliability analysis   
+Call: alpha(x = datag1)
+
+  raw_alpha std.alpha G6(smc) average_r S/N  ase mean   sd median_r
+      0.35      0.41    0.65     0.042 0.7 0.14 0.62 0.13    0.037
+
+    95% confidence boundaries 
+         lower alpha upper
+Feldt     0.03  0.35  0.60
+Duhachek  0.07  0.35  0.63
+
+ Reliability if an item is dropped:
+      raw_alpha std.alpha G6(smc) average_r  S/N alpha se var.r  med.r
+Neg02      0.26      0.31    0.57     0.029 0.44     0.16 0.030 0.0112
+Neg03      0.31      0.35    0.58     0.034 0.53     0.15 0.027 0.0366
+Neg04      0.29      0.33    0.56     0.032 0.49     0.15 0.026 0.0366
+Neg05      0.40      0.45    0.65     0.051 0.81     0.13 0.032 0.0423
+Neg06      0.44      0.48    0.67     0.057 0.91     0.12 0.030 0.0515
+Neg07      0.28      0.35    0.61     0.035 0.55     0.16 0.031 0.0215
+Neg08      0.32      0.40    0.65     0.042 0.66     0.15 0.034 0.0389
+Neg09      0.31      0.37    0.62     0.037 0.58     0.15 0.031 0.0276
+Neg10      0.34      0.39    0.62     0.041 0.65     0.15 0.031 0.0215
+Neg11      0.31      0.39    0.63     0.041 0.63     0.15 0.033 0.0389
+Neg12      0.37      0.43    0.65     0.048 0.76     0.14 0.033 0.0423
+Neg13      0.38      0.46    0.67     0.054 0.85     0.14 0.031 0.0515
+Neg14      0.31      0.38    0.60     0.039 0.60     0.15 0.032 0.0209
+Neg15      0.36      0.42    0.65     0.046 0.73     0.14 0.031 0.0366
+Neg17      0.43      0.48    0.68     0.059 0.94     0.13 0.030 0.0423
+Neg18      0.19      0.31    0.56     0.029 0.44     0.18 0.032 0.0042
+
+ Item statistics 
+       n raw.r   std.r  r.cor r.drop mean   sd
+Neg02 43 0.543  0.5969  0.623  0.419 0.88 0.32
+Neg03 43 0.383  0.4800  0.515  0.271 0.93 0.26
+Neg04 43 0.433  0.5312  0.591  0.282 0.86 0.35
+Neg05 43 0.136  0.1305  0.018 -0.092 0.33 0.47
+Neg06 43 0.044  0.0075 -0.119 -0.192 0.58 0.50
+Neg07 43 0.464  0.4623  0.435  0.307 0.84 0.37
+Neg08 43 0.377  0.3221  0.205  0.152 0.63 0.49
+Neg09 43 0.379  0.4226  0.363  0.201 0.81 0.39
+Neg10 43 0.292  0.3340  0.279  0.107 0.81 0.39
+Neg11 43 0.393  0.3509  0.261  0.167 0.60 0.49
+Neg12 43 0.234  0.1962  0.100  0.011 0.30 0.46
+Neg13 43 0.056  0.0798 -0.077 -0.100 0.12 0.32
+Neg14 43 0.397  0.3932  0.360  0.177 0.35 0.48
+Neg15 43 0.221  0.2328  0.136  0.024 0.79 0.41
+Neg17 43 0.050 -0.0282 -0.197 -0.182 0.63 0.49
+Neg18 43 0.643  0.5975  0.633  0.466 0.42 0.50
+
+Non missing response frequency for each item
+         0    1 miss
+Neg02 0.12 0.88    0
+Neg03 0.07 0.93    0
+Neg04 0.14 0.86    0
+Neg05 0.67 0.33    0
+Neg06 0.42 0.58    0
+Neg07 0.16 0.84    0
+Neg08 0.37 0.63    0
+Neg09 0.19 0.81    0
+Neg10 0.19 0.81    0
+Neg11 0.40 0.60    0
+Neg12 0.70 0.30    0
+Neg13 0.88 0.12    0
+Neg14 0.65 0.35    0
+Neg15 0.21 0.79    0
+Neg17 0.37 0.63    0
+Neg18 0.58 0.42    0
+Warning message:
+In alpha(datag1) :
+  Some items were negatively correlated with the first principal component and probably 
+should be reversed.  
+To do this, run the function again with the 'check.keys=TRUE' option
+
+
+#############################################
+Removed: Neg06
+#############################################
+> datag2 <- datag1 %>% select(-Neg06)
+> alpha(datag2)
+Some items ( Neg05 Neg13 Neg17 ) were negatively correlated with the first principal component and 
+probably should be reversed.  
+To do this, run the function again with the 'check.keys=TRUE' option
+Reliability analysis   
+Call: alpha(x = datag2)
+
+  raw_alpha std.alpha G6(smc) average_r  S/N  ase mean   sd median_r
+      0.44      0.48    0.67     0.057 0.91 0.12 0.62 0.14    0.052
+
+    95% confidence boundaries 
+         lower alpha upper
+Feldt     0.16  0.44  0.66
+Duhachek  0.19  0.44  0.68
+
+ Reliability if an item is dropped:
+      raw_alpha std.alpha G6(smc) average_r  S/N alpha se var.r med.r
+Neg02      0.37      0.40    0.60     0.045 0.66     0.14 0.029 0.039
+Neg03      0.40      0.42    0.60     0.050 0.73     0.13 0.026 0.042
+Neg04      0.39      0.41    0.57     0.046 0.68     0.13 0.025 0.042
+Neg05      0.49      0.51    0.67     0.070 1.05     0.11 0.031 0.054
+Neg07      0.37      0.42    0.61     0.048 0.71     0.14 0.031 0.042
+Neg08      0.41      0.46    0.66     0.058 0.87     0.13 0.033 0.052
+Neg09      0.40      0.44    0.64     0.053 0.78     0.13 0.030 0.042
+Neg10      0.40      0.44    0.64     0.054 0.80     0.13 0.032 0.039
+Neg11      0.41      0.46    0.65     0.057 0.85     0.13 0.032 0.054
+Neg12      0.45      0.49    0.66     0.065 0.98     0.12 0.032 0.058
+Neg13      0.48      0.53    0.69     0.074 1.12     0.12 0.030 0.059
+Neg14      0.41      0.45    0.62     0.055 0.82     0.13 0.031 0.042
+Neg15      0.44      0.48    0.67     0.062 0.92     0.12 0.030 0.042
+Neg17      0.50      0.53    0.70     0.076 1.15     0.11 0.029 0.054
+Neg18      0.33      0.40    0.59     0.045 0.66     0.15 0.032 0.037
+
+ Item statistics 
+       n raw.r std.r  r.cor r.drop mean   sd
+Neg02 43 0.502 0.561  0.566  0.374 0.88 0.32
+Neg03 43 0.388 0.481  0.512  0.278 0.93 0.26
+Neg04 43 0.442 0.535  0.590  0.295 0.86 0.35
+Neg05 43 0.137 0.131  0.018 -0.087 0.33 0.47
+Neg07 43 0.514 0.502  0.477  0.367 0.84 0.37
+Neg08 43 0.386 0.330  0.215  0.167 0.63 0.49
+Neg09 43 0.382 0.423  0.361  0.208 0.81 0.39
+Neg10 43 0.382 0.406  0.334  0.208 0.81 0.39
+Neg11 43 0.389 0.347  0.256  0.167 0.60 0.49
+Neg12 43 0.243 0.204  0.104  0.025 0.30 0.46
+Neg13 43 0.017 0.047 -0.113 -0.135 0.12 0.32
+Neg14 43 0.383 0.381  0.343  0.166 0.35 0.48
+Neg15 43 0.265 0.268  0.161  0.073 0.79 0.41
+Neg17 43 0.111 0.023 -0.150 -0.119 0.63 0.49
+Neg18 43 0.597 0.559  0.569  0.411 0.42 0.50
+
+Non missing response frequency for each item
+         0    1 miss
+Neg02 0.12 0.88    0
+Neg03 0.07 0.93    0
+Neg04 0.14 0.86    0
+Neg05 0.67 0.33    0
+Neg07 0.16 0.84    0
+Neg08 0.37 0.63    0
+Neg09 0.19 0.81    0
+Neg10 0.19 0.81    0
+Neg11 0.40 0.60    0
+Neg12 0.70 0.30    0
+Neg13 0.88 0.12    0
+Neg14 0.65 0.35    0
+Neg15 0.21 0.79    0
+Neg17 0.37 0.63    0
+Neg18 0.58 0.42    0
+Warning message:
+In alpha(datag2) :
+  Some items were negatively correlated with the first principal component and probably 
+should be reversed.  
+To do this, run the function again with the 'check.keys=TRUE' option
+
+#############################################
+Removed: Neg17
+#############################################
+> datag3 <- datag2 %>% select(-Neg17)
+> alpha(datag3)
+Some items ( Neg05 Neg13 ) were negatively correlated with the first principal component and 
+probably should be reversed.  
+To do this, run the function again with the 'check.keys=TRUE' option
+Reliability analysis   
+Call: alpha(x = datag3)
+
+  raw_alpha std.alpha G6(smc) average_r S/N  ase mean   sd median_r
+       0.5      0.53     0.7     0.076 1.1 0.11 0.62 0.15    0.054
+
+    95% confidence boundaries 
+         lower alpha upper
+Feldt     0.25   0.5  0.69
+Duhachek  0.28   0.5  0.72
+
+ Reliability if an item is dropped:
+      raw_alpha std.alpha G6(smc) average_r  S/N alpha se var.r med.r
+Neg02      0.43      0.45    0.63     0.060 0.83     0.13 0.030 0.042
+Neg03      0.46      0.48    0.62     0.066 0.93     0.12 0.025 0.053
+Neg04      0.44      0.46    0.60     0.062 0.85     0.12 0.025 0.053
+Neg05      0.55      0.57    0.70     0.093 1.33     0.10 0.029 0.069
+Neg07      0.44      0.49    0.65     0.068 0.95     0.12 0.030 0.054
+Neg08      0.49      0.53    0.70     0.081 1.14     0.11 0.032 0.064
+Neg09      0.47      0.50    0.67     0.071 1.00     0.12 0.029 0.053
+Neg10      0.47      0.50    0.67     0.073 1.02     0.12 0.032 0.047
+Neg11      0.48      0.52    0.68     0.078 1.09     0.11 0.032 0.063
+Neg12      0.52      0.55    0.69     0.087 1.25     0.11 0.031 0.074
+Neg13      0.53      0.58    0.72     0.096 1.38     0.11 0.028 0.081
+Neg14      0.49      0.52    0.66     0.077 1.08     0.11 0.030 0.053
+Neg15      0.51      0.54    0.70     0.084 1.20     0.11 0.029 0.056
+Neg18      0.42      0.47    0.63     0.065 0.90     0.13 0.031 0.045
+
+ Item statistics 
+       n raw.r std.r   r.cor r.drop mean   sd
+Neg02 43 0.566 0.606  0.6081  0.448 0.88 0.32
+Neg03 43 0.436 0.514  0.5411  0.330 0.93 0.26
+Neg04 43 0.513 0.587  0.6362  0.376 0.86 0.35
+Neg05 43 0.131 0.125  0.0064 -0.092 0.33 0.47
+Neg07 43 0.502 0.485  0.4477  0.353 0.84 0.37
+Neg08 43 0.362 0.305  0.1788  0.140 0.63 0.49
+Neg09 43 0.410 0.441  0.3757  0.239 0.81 0.39
+Neg10 43 0.410 0.424  0.3476  0.239 0.81 0.39
+Neg11 43 0.396 0.348  0.2525  0.175 0.60 0.49
+Neg12 43 0.247 0.204  0.1046  0.029 0.30 0.46
+Neg13 43 0.056 0.079 -0.0780 -0.096 0.12 0.32
+Neg14 43 0.369 0.365  0.3111  0.151 0.35 0.48
+Neg15 43 0.247 0.250  0.1366  0.055 0.79 0.41
+Neg18 43 0.581 0.538  0.5334  0.391 0.42 0.50
+
+Non missing response frequency for each item
+         0    1 miss
+Neg02 0.12 0.88    0
+Neg03 0.07 0.93    0
+Neg04 0.14 0.86    0
+Neg05 0.67 0.33    0
+Neg07 0.16 0.84    0
+Neg08 0.37 0.63    0
+Neg09 0.19 0.81    0
+Neg10 0.19 0.81    0
+Neg11 0.40 0.60    0
+Neg12 0.70 0.30    0
+Neg13 0.88 0.12    0
+Neg14 0.65 0.35    0
+Neg15 0.21 0.79    0
+Neg18 0.58 0.42    0
+Warning message:
+In alpha(datag3) :
+  Some items were negatively correlated with the first principal component and probably 
+should be reversed.  
+To do this, run the function again with the 'check.keys=TRUE' option
+
+#############################################
+Removed: Neg05
+#############################################
+> datag4 <- datag3 %>% select(-Neg05)
+> alpha(datag4)
+Some items ( Neg13 ) were negatively correlated with the first principal component and 
+probably should be reversed.  
+To do this, run the function again with the 'check.keys=TRUE' option
+Reliability analysis   
+Call: alpha(x = datag4)
+
+  raw_alpha std.alpha G6(smc) average_r S/N ase mean   sd median_r
+      0.55      0.57     0.7     0.093 1.3 0.1 0.64 0.16    0.069
+
+    95% confidence boundaries 
+         lower alpha upper
+Feldt     0.32  0.55  0.73
+Duhachek  0.35  0.55  0.75
+
+ Reliability if an item is dropped:
+      raw_alpha std.alpha G6(smc) average_r S/N alpha se var.r med.r
+Neg02      0.49      0.50    0.64     0.078 1.0    0.112 0.029 0.054
+Neg03      0.52      0.52    0.63     0.084 1.1    0.108 0.023 0.056
+Neg04      0.51      0.51    0.62     0.080 1.0    0.109 0.024 0.063
+Neg07      0.50      0.53    0.66     0.087 1.1    0.111 0.030 0.069
+Neg08      0.55      0.57    0.70     0.099 1.3    0.101 0.031 0.081
+Neg09      0.51      0.53    0.67     0.087 1.1    0.108 0.029 0.063
+Neg10      0.52      0.54    0.68     0.090 1.2    0.106 0.031 0.056
+Neg11      0.54      0.56    0.69     0.096 1.3    0.102 0.031 0.074
+Neg12      0.57      0.59    0.70     0.108 1.5    0.095 0.029 0.091
+Neg13      0.59      0.62    0.73     0.122 1.7    0.093 0.026 0.101
+Neg14      0.53      0.55    0.68     0.091 1.2    0.105 0.031 0.061
+Neg15      0.55      0.57    0.70     0.101 1.3    0.100 0.029 0.069
+Neg18      0.49      0.52    0.65     0.084 1.1    0.114 0.031 0.056
+
+ Item statistics 
+       n  raw.r std.r r.cor r.drop mean   sd
+Neg02 43 0.5466 0.591  0.59  0.425 0.88 0.32
+Neg03 43 0.4389 0.518  0.54  0.333 0.93 0.26
+Neg04 43 0.4848 0.564  0.60  0.343 0.86 0.35
+Neg07 43 0.4956 0.481  0.44  0.345 0.84 0.37
+Neg08 43 0.3818 0.323  0.20  0.161 0.63 0.49
+Neg09 43 0.4516 0.477  0.42  0.285 0.81 0.39
+Neg10 43 0.4230 0.436  0.36  0.253 0.81 0.39
+Neg11 43 0.4081 0.359  0.26  0.187 0.60 0.49
+Neg12 43 0.2536 0.210  0.10  0.035 0.30 0.46
+Neg13 43 0.0089 0.039 -0.13 -0.143 0.12 0.32
+Neg14 43 0.4382 0.424  0.34  0.228 0.35 0.48
+Neg15 43 0.3047 0.299  0.19  0.115 0.79 0.41
+Neg18 43 0.5577 0.520  0.49  0.361 0.42 0.50
+
+Non missing response frequency for each item
+         0    1 miss
+Neg02 0.12 0.88    0
+Neg03 0.07 0.93    0
+Neg04 0.14 0.86    0
+Neg07 0.16 0.84    0
+Neg08 0.37 0.63    0
+Neg09 0.19 0.81    0
+Neg10 0.19 0.81    0
+Neg11 0.40 0.60    0
+Neg12 0.70 0.30    0
+Neg13 0.88 0.12    0
+Neg14 0.65 0.35    0
+Neg15 0.21 0.79    0
+Neg18 0.58 0.42    0
+Warning message:
+In alpha(datag4) :
+  Some items were negatively correlated with the first principal component and probably 
+should be reversed.  
+To do this, run the function again with the 'check.keys=TRUE' option
+
+#############################################
+Removed: Neg13
+#############################################
+> datag5 <- datag4 %>% select(-Neg13)
+> alpha(datag5)
+
+Reliability analysis   
+Call: alpha(x = datag5)
+
+  raw_alpha std.alpha G6(smc) average_r S/N   ase mean   sd median_r
+      0.59      0.62    0.73      0.12 1.7 0.093 0.69 0.18      0.1
+
+    95% confidence boundaries 
+         lower alpha upper
+Feldt     0.38  0.59  0.75
+Duhachek  0.41  0.59  0.77
+
+ Reliability if an item is dropped:
+      raw_alpha std.alpha G6(smc) average_r S/N alpha se var.r med.r
+Neg02      0.55      0.58    0.68      0.11 1.4    0.103 0.026 0.083
+Neg03      0.56      0.58    0.66      0.11 1.4    0.100 0.020 0.083
+Neg04      0.55      0.57    0.66      0.11 1.3    0.102 0.020 0.099
+Neg07      0.55      0.59    0.69      0.12 1.5    0.102 0.026 0.102
+Neg08      0.59      0.63    0.73      0.13 1.7    0.093 0.028 0.104
+Neg09      0.55      0.59    0.70      0.12 1.4    0.101 0.027 0.099
+Neg10      0.57      0.61    0.71      0.12 1.5    0.098 0.028 0.088
+Neg11      0.59      0.62    0.72      0.13 1.6    0.094 0.027 0.104
+Neg12      0.61      0.65    0.73      0.14 1.8    0.088 0.024 0.113
+Neg14      0.58      0.61    0.71      0.12 1.6    0.097 0.028 0.088
+Neg15      0.58      0.62    0.73      0.13 1.6    0.095 0.028 0.102
+Neg18      0.54      0.59    0.68      0.11 1.4    0.105 0.028 0.099
+
+ Item statistics 
+       n raw.r std.r r.cor r.drop mean   sd
+Neg02 43  0.52  0.56  0.53  0.397 0.88 0.32
+Neg03 43  0.46  0.55  0.56  0.360 0.93 0.26
+Neg04 43  0.49  0.57  0.59  0.349 0.86 0.35
+Neg07 43  0.50  0.48  0.43  0.347 0.84 0.37
+Neg08 43  0.38  0.32  0.19  0.162 0.63 0.49
+Neg09 43  0.48  0.51  0.44  0.316 0.81 0.39
+Neg10 43  0.42  0.43  0.35  0.252 0.81 0.39
+Neg11 43  0.40  0.36  0.26  0.186 0.60 0.49
+Neg12 43  0.26  0.22  0.11  0.047 0.30 0.46
+Neg14 43  0.43  0.41  0.32  0.218 0.35 0.48
+Neg15 43  0.35  0.36  0.24  0.171 0.79 0.41
+Neg18 43  0.55  0.52  0.48  0.359 0.42 0.50
+
+Non missing response frequency for each item
+         0    1 miss
+Neg02 0.12 0.88    0
+Neg03 0.07 0.93    0
+Neg04 0.14 0.86    0
+Neg07 0.16 0.84    0
+Neg08 0.37 0.63    0
+Neg09 0.19 0.81    0
+Neg10 0.19 0.81    0
+Neg11 0.40 0.60    0
+Neg12 0.70 0.30    0
+Neg14 0.65 0.35    0
+Neg15 0.21 0.79    0
+Neg18 0.58 0.42    0
+
+#############################################
+Removed: Neg12
+#############################################
+> datag6 <- datag5 %>% select(-Neg12)
+> alpha(datag6)
+
+Reliability analysis   
+Call: alpha(x = datag6)
+
+  raw_alpha std.alpha G6(smc) average_r S/N   ase mean   sd median_r
+      0.61      0.65    0.73      0.14 1.8 0.088 0.72 0.19     0.11
+
+    95% confidence boundaries 
+         lower alpha upper
+Feldt     0.42  0.61  0.77
+Duhachek  0.44  0.61  0.79
+
+ Reliability if an item is dropped:
+      raw_alpha std.alpha G6(smc) average_r S/N alpha se var.r med.r
+Neg02      0.58      0.61    0.68      0.14 1.6    0.096 0.025  0.10
+Neg03      0.58      0.59    0.66      0.13 1.5    0.097 0.020  0.10
+Neg04      0.57      0.60    0.65      0.13 1.5    0.097 0.017  0.10
+Neg07      0.58      0.62    0.69      0.14 1.6    0.097 0.025  0.11
+Neg08      0.62      0.66    0.74      0.16 1.9    0.086 0.025  0.13
+Neg09      0.58      0.62    0.70      0.14 1.6    0.095 0.025  0.11
+Neg10      0.60      0.63    0.71      0.15 1.7    0.093 0.026  0.12
+Neg11      0.61      0.64    0.72      0.15 1.8    0.090 0.026  0.13
+Neg14      0.59      0.63    0.71      0.14 1.7    0.094 0.027  0.10
+Neg15      0.61      0.64    0.73      0.15 1.8    0.090 0.026  0.11
+Neg18      0.59      0.62    0.70      0.14 1.6    0.095 0.027  0.11
+
+ Item statistics 
+       n raw.r std.r r.cor r.drop mean   sd
+Neg02 43  0.49  0.53  0.49   0.35 0.88 0.32
+Neg03 43  0.53  0.60  0.62   0.43 0.93 0.26
+Neg04 43  0.51  0.59  0.61   0.37 0.86 0.35
+Neg07 43  0.51  0.49  0.44   0.36 0.84 0.37
+Neg08 43  0.37  0.31  0.18   0.15 0.63 0.49
+Neg09 43  0.48  0.51  0.44   0.32 0.81 0.39
+Neg10 43  0.42  0.43  0.35   0.25 0.81 0.39
+Neg11 43  0.44  0.38  0.28   0.22 0.60 0.49
+Neg14 43  0.48  0.45  0.35   0.27 0.35 0.48
+Neg15 43  0.37  0.38  0.25   0.19 0.79 0.41
+Neg18 43  0.51  0.48  0.41   0.30 0.42 0.50
+
+Non missing response frequency for each item
+         0    1 miss
+Neg02 0.12 0.88    0
+Neg03 0.07 0.93    0
+Neg04 0.14 0.86    0
+Neg07 0.16 0.84    0
+Neg08 0.37 0.63    0
+Neg09 0.19 0.81    0
+Neg10 0.19 0.81    0
+Neg11 0.40 0.60    0
+Neg14 0.65 0.35    0
+Neg15 0.21 0.79    0
+Neg18 0.58 0.42    0
+
+#############################################
+Removed: Neg08
+#############################################
+> datag7 <- datag6 %>% select(-Neg08)
+> alpha(datag7)
+
+Reliability analysis   
+Call: alpha(x = datag7)
+
+  raw_alpha std.alpha G6(smc) average_r S/N   ase mean   sd median_r
+      0.62      0.66    0.74      0.16 1.9 0.086 0.73 0.19     0.13
+
+    95% confidence boundaries 
+         lower alpha upper
+Feldt     0.43  0.62  0.77
+Duhachek  0.45  0.62  0.79
+
+ Reliability if an item is dropped:
+      raw_alpha std.alpha G6(smc) average_r S/N alpha se var.r med.r
+Neg02      0.59      0.62    0.68      0.15 1.6    0.095 0.025  0.11
+Neg03      0.58      0.60    0.66      0.14 1.5    0.097 0.020  0.11
+Neg04      0.58      0.60    0.65      0.14 1.5    0.097 0.017  0.12
+Neg07      0.59      0.64    0.70      0.16 1.8    0.094 0.024  0.14
+Neg09      0.59      0.62    0.71      0.16 1.7    0.095 0.026  0.12
+Neg10      0.61      0.65    0.72      0.17 1.8    0.089 0.026  0.14
+Neg11      0.64      0.67    0.74      0.18 2.0    0.082 0.026  0.16
+Neg14      0.60      0.64    0.72      0.16 1.7    0.094 0.029  0.12
+Neg15      0.62      0.65    0.73      0.17 1.9    0.089 0.027  0.14
+Neg18      0.60      0.63    0.70      0.16 1.7    0.093 0.028  0.12
+
+ Item statistics 
+       n raw.r std.r r.cor r.drop mean   sd
+Neg02 43  0.51  0.55  0.51   0.37 0.88 0.32
+Neg03 43  0.57  0.64  0.65   0.47 0.93 0.26
+Neg04 43  0.56  0.62  0.64   0.41 0.86 0.35
+Neg07 43  0.50  0.48  0.42   0.33 0.84 0.37
+Neg09 43  0.51  0.53  0.46   0.34 0.81 0.39
+Neg10 43  0.42  0.43  0.33   0.23 0.81 0.39
+Neg11 43  0.38  0.33  0.18   0.13 0.60 0.49
+Neg14 43  0.52  0.48  0.38   0.31 0.35 0.48
+Neg15 43  0.41  0.40  0.27   0.21 0.79 0.41
+Neg18 43  0.53  0.49  0.41   0.31 0.42 0.50
+
+Non missing response frequency for each item
+         0    1 miss
+Neg02 0.12 0.88    0
+Neg03 0.07 0.93    0
+Neg04 0.14 0.86    0
+Neg07 0.16 0.84    0
+Neg09 0.19 0.81    0
+Neg10 0.19 0.81    0
+Neg11 0.40 0.60    0
+Neg14 0.65 0.35    0
+Neg15 0.21 0.79    0
+Neg18 0.58 0.42    0
+
+#############################################
+Removed: Neg11
+#############################################
+> datag8 <- datag7 %>% select(-Neg11)
+> alpha(datag8)
+
+Reliability analysis   
+Call: alpha(x = datag8)
+
+  raw_alpha std.alpha G6(smc) average_r S/N   ase mean  sd median_r
+      0.64      0.67    0.74      0.18   2 0.082 0.74 0.2     0.16
+
+    95% confidence boundaries 
+         lower alpha upper
+Feldt     0.46  0.64  0.78
+Duhachek  0.48  0.64  0.80
+
+ Reliability if an item is dropped:
+      raw_alpha std.alpha G6(smc) average_r S/N alpha se var.r med.r
+Neg02      0.61      0.64    0.69      0.18 1.8    0.090 0.026  0.14
+Neg03      0.59      0.60    0.65      0.16 1.5    0.094 0.022  0.13
+Neg04      0.59      0.60    0.64      0.16 1.5    0.095 0.017  0.15
+Neg07      0.63      0.66    0.72      0.20 2.0    0.086 0.025  0.19
+Neg09      0.61      0.64    0.71      0.18 1.8    0.089 0.027  0.14
+Neg10      0.64      0.67    0.73      0.20 2.0    0.083 0.026  0.19
+Neg14      0.62      0.65    0.72      0.19 1.8    0.090 0.032  0.16
+Neg15      0.64      0.67    0.74      0.20 2.0    0.083 0.028  0.17
+Neg18      0.62      0.65    0.71      0.19 1.8    0.089 0.030  0.14
+
+ Item statistics 
+       n raw.r std.r r.cor r.drop mean   sd
+Neg02 43  0.51  0.54  0.49   0.36 0.88 0.32
+Neg03 43  0.62  0.67  0.68   0.52 0.93 0.26
+Neg04 43  0.61  0.66  0.68   0.46 0.86 0.35
+Neg07 43  0.45  0.44  0.35   0.27 0.84 0.37
+Neg09 43  0.52  0.54  0.45   0.34 0.81 0.39
+Neg10 43  0.42  0.43  0.32   0.22 0.81 0.39
+Neg14 43  0.56  0.51  0.39   0.34 0.35 0.48
+Neg15 43  0.43  0.41  0.27   0.21 0.79 0.41
+Neg18 43  0.57  0.51  0.42   0.33 0.42 0.50
+
+Non missing response frequency for each item
+         0    1 miss
+Neg02 0.12 0.88    0
+Neg03 0.07 0.93    0
+Neg04 0.14 0.86    0
+Neg07 0.16 0.84    0
+Neg09 0.19 0.81    0
+Neg10 0.19 0.81    0
+Neg14 0.65 0.35    0
+Neg15 0.21 0.79    0
+Neg18 0.58 0.42    0
+> 
